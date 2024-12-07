@@ -68,7 +68,7 @@ const Home = () => {
       <Contact
         title={ContactContent.title}
         content={ContactContent.text}
-        icon="/img/images/shay2.JPG"
+        icon="/img/images/shay2.jpg"
         id="contact"
       />
     </Container>
