@@ -33,3 +33,34 @@ export const ContentWrapper = styled("div")`
     max-width: 100%;
   }
 `;
+
+export const IconWrapper = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+
+  @media (max-width: 768px) {
+    gap: 10px;
+  }
+
+  @media (max-width: 480px) {
+    gap: 5px;
+  }
+`;
+
+export const IconItem = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* Ensure items shrink to fit smaller screens */
+  @media (max-width: 768px) {
+    width: 30%;
+  }
+
+  @media (max-width: 480px) {
+    width: 40%;
+  }
+`;

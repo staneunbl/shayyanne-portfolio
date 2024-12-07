@@ -31,10 +31,10 @@ const Certification = ({ title, content, button, t }: CertificationProps) => {
               <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '20px', marginTop: '5px',marginBottom: '25px' }}>
                 <div style={{ display: 'flex', justifyContent: 'center', gap: '20px' }}>
                   <div>
-                    <img src="/img/icons/databasecert.png" alt="HTML" width="180" height="auto" />
+                    <img src="/img/icons/databasecert.png" alt="HTML" width="150" height="auto" />
                   </div>
                   <div>
-                    <img src="/img/icons/htmlcsscert.png" alt="HTML" width="180" height="auto" />
+                    <img src="/img/icons/htmlcsscert.png" alt="HTML" width="150" height="auto" />
                   </div>
                 </div>
               </div>
