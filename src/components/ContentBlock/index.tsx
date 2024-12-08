@@ -82,14 +82,18 @@ const ContentBlock = ({
                         );
                       }
                       return (
-                        <Button
-                          key={id}
-                          color={item.color}
-                          onClick={() => scrollTo("about")}
-                          style={{ width: '100%' }}
-                        >
+                        <a
+                        key={id}
+                        href="https://github.com/staneunbl"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        download
+                        style={{ textDecoration: 'none', display: 'flex', flex: 1 }}
+                      >
+                        <Button color={item.color} style={{ width: '100%' }}>
                           {t(item.title)}
                         </Button>
+                      </a>
                       );
                     }
                   )}
