@@ -2,7 +2,6 @@ import { Row, Col } from "antd";
 import { withTranslation, TFunction } from "react-i18next";
 import { Slide } from "react-awesome-reveal";
 import { StyledLine } from "./styles";
-import { Button } from "../../common/Button";
 import { CertificationSection, Content, ContentWrapper, LinkCert } from "./styles";
 
 interface CertificationProps {
@@ -28,16 +27,16 @@ const Certification = ({ title, content, button, t }: CertificationProps) => {
             <StyledLine />
               <h6>{t(title)}</h6>
               <Content>{t(content)}</Content>
-              <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '20px', marginTop: '5px',marginBottom: '25px' }}>
-                <div style={{ display: 'flex', justifyContent: 'center', gap: '20px' }}>
-                  <div>
-                    <img src="/img/icons/databasecert.png" alt="HTML" width="150" height="auto" />
-                  </div>
-                  <div>
-                    <img src="/img/icons/htmlcsscert.png" alt="HTML" width="150" height="auto" />
+                <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '20px', marginTop: '5px',marginBottom: '25px' }}>
+                  <div style={{ display: 'flex', justifyContent: 'center', gap: '20px' }}>
+                    <div>
+                      <img src="/img/icons/databasecert.png" alt="HTML" width="150" height="auto" />
+                    </div>
+                    <div>
+                      <img src="/img/icons/htmlcsscert.png" alt="HTML" width="150" height="auto" />
+                    </div>
                   </div>
                 </div>
-              </div>
                 <LinkCert
                   href="https://www.credly.com/users/shayyanne-marasigan"
                   target="_blank"

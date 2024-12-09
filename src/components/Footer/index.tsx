@@ -46,9 +46,8 @@ const Footer = ({ t }: { t: TFunction }) => {
                     width="101px"
                     height="64px"
                   />
-                  {/* Description below the logo */}
                   <p style={{ marginTop: '10px', fontSize: '14px', color: '#555', textAlign: 'left' }}>
-                    This website is built with React, utilizing Ant Design for UI components, react-awesome-reveal for animations, styled-components for CSS-in-JS styling, and i18next for internationalization.
+                      This website is built with React, utilizing Ant Design for UI components, react-awesome-reveal for animations, and styled-components for CSS-in-JS styling.
                   </p>
                 </LogoContainer>
               </div>

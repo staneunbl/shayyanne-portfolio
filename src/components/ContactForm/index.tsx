@@ -25,7 +25,6 @@ const Contact = ({ title, content, id, icon, t }: ContactProps) => {
         </Col>
         <Col lg={12} md={12} sm={24} xs={24}>
           <Slide direction="right" triggerOnce>
-            {/* Render the icon image */}
             <img src={icon} alt="Icon" style={{ width: '100%', height: 'auto', maxWidth: '500px', borderRadius: '5%' }} />
           </Slide>
         </Col>
