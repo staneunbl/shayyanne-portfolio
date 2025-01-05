@@ -14,4 +14,7 @@
       "icon": "/img/icons/lck.png" 
     }
   ]
-}
+} 
+
+  git config --global user.email "shayyannelee@gmail.com"
+  git config --global user.name "staneunbl"
