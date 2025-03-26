@@ -4,23 +4,16 @@ import { withTranslation, TFunction } from "react-i18next";
 import { Slide } from "react-awesome-reveal";
 import { StyledLine } from "./styles";
 import { MiddleBlockSection, Content, ContentWrapper, IconItem, IconWrapper } from "./styles";
-import styled from "styled-components";
 
 interface MiddleBlockProps {
   title: string;
+  secondtitle: string;
   content: string;
   button: string;
   t: TFunction;
 }
 
-const MiddleBlock = ({ title, content, button, t }: MiddleBlockProps) => {
-  const scrollTo = (id: string) => {
-    const element = document.getElementById(id) as HTMLDivElement;
-    element.scrollIntoView({
-      behavior: "smooth",
-    });
-  };
-
+const MiddleBlock = ({ title, secondtitle, content, t, }: MiddleBlockProps) => {
   return (
     <MiddleBlockSection>
       <Slide direction="up" triggerOnce>
@@ -37,10 +30,10 @@ const MiddleBlock = ({ title, content, button, t }: MiddleBlockProps) => {
                   <img src="/img/svg/html.svg" alt="HTML" width="65" height="65" />
                 </IconItem>
                 <IconItem>
-                  <img src="/img/svg/css.svg" alt="CSS" width="65" height="65" />
+                  <img src="/img/svg/javascript.svg" alt="JavaScript" width="65" height="65" />
                 </IconItem>
                 <IconItem>
-                  <img src="/img/svg/javascript.svg" alt="JavaScript" width="65" height="65" />
+                  <img src="/img/svg/typescript-official-svgrepo-com.svg" alt="Typescript" width="65" height="65" />
                 </IconItem>
                 <IconItem>
                   <img src="/img/svg/react.svg" alt="React" width="65" height="65" />
@@ -52,20 +45,52 @@ const MiddleBlock = ({ title, content, button, t }: MiddleBlockProps) => {
                   <img src="/img/svg/php.svg" alt="PHP" width="65" height="65" />
                 </IconItem>
               </IconWrapper>
-
               {/* Second row */}
-              <IconWrapper>
+              <IconWrapper style={{ marginBottom: "4rem" }}>
                 <IconItem>
-                  <img src="/img/svg/figma.svg" alt="Figma" width="65" height="65" />
+                  <img src="/img/svg/css.svg" alt="CSS" width="65" height="65" />
                 </IconItem>
                 <IconItem>
                   <img src="/img/svg/bootstrap.svg" alt="Bootstrap" width="65" height="65" />
+                </IconItem>
+                <IconItem>
+                  <img src="/img/svg/material-ui-1.svg" alt="MaterialUI" width="65" height="65" />
+                </IconItem>
+                <IconItem>
+                  <img src="/img/svg/shadcn-ui-seeklogo.svg" alt="ShadCN" width="65" height="65" />
+                </IconItem>
+              </IconWrapper>
+              <StyledLine />
+              <h6>{t(secondtitle)}</h6>
+              <IconWrapper>
+                <IconItem>
+                  <img src="/img/svg/vscode3-svgrepo-com.svg" alt="Visual Code" width="65" height="65" />
+                </IconItem>
+                <IconItem>
+                  <img src="/img/svg/microsoft-sql-server-logo-svgrepo-com.svg" alt="SSMS" width="65" height="65" />
+                </IconItem>
+                <IconItem>
+                  <img src="/img/svg/mysql-official.svg" alt="Figma" width="65" height="65" />
+                </IconItem>
+                <IconItem>
+                  <img src="/img/svg/postman-icon-svgrepo-com.svg" alt="Postman" width="65" height="65" />
+                </IconItem>
+                <IconItem>
+                  <img src="/img/svg/xampp-svgrepo-com.svg" alt="Postman" width="65" height="65" />
+                </IconItem>
+              </IconWrapper>
+              <IconWrapper style={{ marginBottom: "0rem !important" }}>
+                <IconItem>
+                  <img src="/img/svg/figma.svg" alt="Figma" width="65" height="65" />
                 </IconItem>
                 <IconItem>
                   <img src="/img/svg/AdobePremierePro.svg" alt="Adobe Premiere Pro" width="65" height="65" />
                 </IconItem>
                 <IconItem>
                   <img src="/img/svg/AdobeIllustrator.svg" alt="Adobe Illustrator" width="65" height="65" />
+                </IconItem>
+                <IconItem>
+                  <img src="/img/svg/notion-seeklogo.svg" alt="Notion" width="80" height="80" />
                 </IconItem>
                 <IconItem>
                   <img src="/img/svg/canva.svg" alt="Canva" width="65" height="65" />

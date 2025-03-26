@@ -12,7 +12,6 @@ export const StyledLine = styled.hr`
 
 export const MiddleBlockSection = styled("section")`
   position: relative;
-  padding: 2.5rem 0 3rem;
   text-align: center;
   display: flex;
   justify-content: center;
