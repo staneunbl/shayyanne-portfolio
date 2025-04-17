@@ -1,24 +1,15 @@
 import { Row, Col } from "antd";
-import { withTranslation, TFunction } from "react-i18next";
 import { SvgIcon } from "../../common/SvgIcon";
 import Container from "../../common/Container";
-
-import i18n from "i18next";
-import {
-  Extra,
-  LogoContainer,
-  FooterContainer,
-} from "./styles";
+import { Extra, LogoContainer, FooterContainer } from "./styles";
+import React from "react";
 
 interface SocialLinkProps {
   href: string;
   src: string;
 }
 
-const Footer = ({ t }: { t: TFunction }) => {
-  const handleChange = (language: string) => {
-    i18n.changeLanguage(language);
-  };
+const Footer = () => {
   const SocialLink = ({ href, src }: SocialLinkProps) => {
     return (
       <a
@@ -33,27 +24,52 @@ const Footer = ({ t }: { t: TFunction }) => {
     );
   };
   return (
-    <>
+    <React.Fragment>
       <Extra>
         <Container border={true}>
-          <Row justify="space-between" align="middle" style={{ paddingTop: "3rem" }}>
+          <Row
+            justify="space-between"
+            align="middle"
+            style={{ paddingTop: "3rem" }}
+          >
             <Col xs={24} sm={12} md={12} lg={12}>
               <div>
-                <LogoContainer style={{ display: 'flex', flexDirection: 'column', alignItems: 'left' }}>
+                <LogoContainer
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "left",
+                  }}
+                >
                   <SvgIcon
                     src="logo.svg"
                     aria-label="homepage"
                     width="101px"
                     height="64px"
                   />
-                  <p style={{ marginTop: '10px', fontSize: '14px', color: '#555', textAlign: 'left' }}>
-                      This website is built with React, utilizing Ant Design for UI components, react-awesome-reveal for animations, and styled-components for CSS-in-JS styling.
+                  <p
+                    style={{
+                      marginTop: "10px",
+                      fontSize: "14px",
+                      color: "#555",
+                      textAlign: "left",
+                    }}
+                  >
+                    This website is built with React, utilizing Ant Design for
+                    UI components, react-awesome-reveal for animations, and
+                    styled-components for CSS-in-JS styling.
                   </p>
                 </LogoContainer>
               </div>
             </Col>
             <Col xs={24} sm={12} md={12} lg={12}>
-              <FooterContainer style={{ display: 'flex', justifyContent: 'flex-end', gap: '20px' }}>
+              <FooterContainer
+                style={{
+                  display: "flex",
+                  justifyContent: "flex-end",
+                  gap: "20px",
+                }}
+              >
                 <SocialLink
                   href="https://www.linkedin.com/in/shayyanne-dominiq-marasigan-72727a334/"
                   src="facebook.svg"
@@ -75,9 +91,8 @@ const Footer = ({ t }: { t: TFunction }) => {
           </Row>
         </Container>
       </Extra>
-
-    </>
+    </React.Fragment>
   );
 };
 
-export default withTranslation()(Footer);
+export default Footer;

@@ -1,19 +1,13 @@
 import { Row, Col } from "antd";
-import { withTranslation } from "react-i18next";
 import { Slide } from "react-awesome-reveal";
-import { ContactProps, ValidationTypeProps } from "./types";
+import { ContactProps } from "./types";
 import { useForm } from "../../common/utils/useForm";
 import validate from "../../common/utils/validationRules";
 import Block from "../Block";
-import { ContactContainer, FormGroup, Span, ButtonContainer } from "./styles";
+import { ContactContainer } from "./styles";
 
-const Contact = ({ title, content, id, icon, t }: ContactProps) => {
+const Contact = ({ title, content, id, icon }: ContactProps) => {
   const { values, errors, handleChange, handleSubmit } = useForm(validate);
-
-  const ValidationType = ({ type }: ValidationTypeProps) => {
-    const ErrorMessage = errors[type as keyof typeof errors];
-    return <Span>{ErrorMessage}</Span>;
-  };
 
   return (
     <ContactContainer id={id}>
@@ -33,4 +27,4 @@ const Contact = ({ title, content, id, icon, t }: ContactProps) => {
   );
 };
 
-export default withTranslation()(Contact);
+export default Contact;

@@ -54,7 +54,6 @@ const Home = () => {
         icon="/img/images/cs3.png"
         icon2="/img/images/cs2.png"
         icon3="/img/images/cs4.png"
-
         id="mission"
       />
       <ContentBlock

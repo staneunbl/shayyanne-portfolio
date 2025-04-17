@@ -1,10 +1,8 @@
 import { Row, Col } from "antd";
 import { Fade } from "react-awesome-reveal";
-import { withTranslation } from "react-i18next";
-
 import { ContentBlockProps } from "./types";
 import { Button } from "../../common/Button";
-import { FirstTitle, LinkSite, StyledLine, LinkPortfolio } from './styles';
+import { FirstTitle, LinkSite, LinkPortfolio } from './styles';
 
 import {
   ContentSection,
@@ -26,16 +24,9 @@ const ContentBlock = ({
   content,
   section,
   button,
-  t,
   id,
   direction,
 }: ContentBlockProps) => {
-  const scrollTo = (id: string) => {
-    const element = document.getElementById(id) as HTMLDivElement;
-    element.scrollIntoView({
-      behavior: "smooth",
-    });
-  };
 
   return (
     <ContentSection>
@@ -51,9 +42,9 @@ const ContentBlock = ({
           </Col>
           <Col lg={11} md={11} sm={11} xs={24}>
             <ContentWrapper>
-              <FirstTitle>{t(firsttitle)}</FirstTitle>
-              <h6>{t(title)}</h6>
-              <Content>{t(content)}</Content>
+              <FirstTitle>{(firsttitle)}</FirstTitle>
+              <h6>{(title)}</h6>
+              <Content>{(content)}</Content>
               {direction === "right" ? (
                 <ButtonWrapper>
                 {typeof button === "object" &&
@@ -69,14 +60,14 @@ const ContentBlock = ({
                         return (
                           <a
                             key={id}
-                            href="/CV/CV-Shayanne-Marasigan.pdf"
+                            href="/CV/MARASIGAN-SHAYYANNE_CV_updated.pdf"
                             target="_blank"
                             rel="noopener noreferrer"
                             download
                             style={{ textDecoration: 'none', display: 'flex', flex: 1 }}
                           >
                             <Button color={item.color} style={{ width: '100%' }}>
-                              {t(item.title)}
+                              {(item.title)}
                             </Button>
                           </a>
                         );
@@ -91,7 +82,7 @@ const ContentBlock = ({
                         style={{ textDecoration: 'none', display: 'flex', flex: 1 }}
                       >
                         <Button color={item.color} style={{ width: '100%' }}>
-                          {t(item.title)}
+                          {(item.title)}
                         </Button>
                       </a>
                       );
@@ -145,8 +136,8 @@ const ContentBlock = ({
                               height="auto"
                               alt={item.title}
                             />
-                            <MinTitle>{t(item.title)}</MinTitle>
-                            <MinPara>{t(item.content)}</MinPara>
+                            <MinTitle>{(item.title)}</MinTitle>
+                            <MinPara>{(item.content)}</MinPara>
                           </Col>
                         );
                       }
@@ -198,4 +189,4 @@ const ContentBlock = ({
   );
 };
 
-export default withTranslation()(ContentBlock);
+export default ContentBlock;

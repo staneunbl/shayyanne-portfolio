@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { Row, Col, Drawer } from "antd";
-import { withTranslation, TFunction } from "react-i18next";
 import Container from "../../common/Container";
 import { SvgIcon } from "../../common/SvgIcon";
 import { Button } from "../../common/Button";
+import { NavLink } from "react-router-dom";
 import {
   HeaderSection,
   LogoContainer,
@@ -16,7 +16,7 @@ import {
   Span,
 } from "./styles";
 
-const Header = ({ t }: { t: TFunction }) => {
+const Header = () => {
   const [visible, setVisibility] = useState(false);
 
   const toggleButton = () => {
@@ -33,21 +33,25 @@ const Header = ({ t }: { t: TFunction }) => {
     };
     return (
       <>
-        <CustomNavLinkSmall onClick={() => scrollTo("about")}>
-          <Span>{t("Affliations")}</Span>
-        </CustomNavLinkSmall>
-        <CustomNavLinkSmall onClick={() => scrollTo("mission")}>
-          <Span>{t("Project")}</Span>
-        </CustomNavLinkSmall>
+        <NavLink to="/home" style={{ textDecoration: "none" }}>
+          <CustomNavLinkSmall>
+            <Span>{"Personal"}</Span>
+          </CustomNavLinkSmall>
+        </NavLink>
+        <NavLink to="/projects" style={{ textDecoration: "none" }}>
+          <CustomNavLinkSmall>
+            <Span>{"Projects"}</Span>
+          </CustomNavLinkSmall>
+        </NavLink>
         <CustomNavLinkSmall onClick={() => scrollTo("product")}>
-          <Span>{t("Thesis")}</Span>
+          <Span>{"Thesis"}</Span>
         </CustomNavLinkSmall>
         <CustomNavLinkSmall
           style={{ width: "180px" }}
           onClick={() => scrollTo("contact")}
         >
           <Span>
-            <Button>{t("Contact Me")}</Button>
+            <Button>{"Contact Me"}</Button>
           </Span>
         </CustomNavLinkSmall>
       </>
@@ -58,12 +62,12 @@ const Header = ({ t }: { t: TFunction }) => {
     <HeaderSection>
       <Container>
         <Row justify="space-between">
-          <LogoContainer to="/" aria-label="homepage">
-            <SvgIcon src="logo.svg" width="101px" height="64px" /> {/* logo name */}
+          <LogoContainer to="/home" aria-label="homepage">
+            <SvgIcon src="logo.svg" width="101px" height="64px" />
           </LogoContainer>
           <NotHidden>
             <MenuItem />
-          </NotHidden> 
+          </NotHidden>
           <Burger onClick={toggleButton}>
             <Outline />
           </Burger>
@@ -86,4 +90,4 @@ const Header = ({ t }: { t: TFunction }) => {
   );
 };
 
-export default withTranslation()(Header);
+export default Header;
