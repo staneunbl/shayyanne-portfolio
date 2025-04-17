@@ -35,7 +35,7 @@ const Header = () => {
       <>
         <NavLink to="/home" style={{ textDecoration: "none" }}>
           <CustomNavLinkSmall>
-            <Span>{"Personal"}</Span>
+            <Span>{"Home"}</Span>
           </CustomNavLinkSmall>
         </NavLink>
         <NavLink to="/projects" style={{ textDecoration: "none" }}>
@@ -43,9 +43,11 @@ const Header = () => {
             <Span>{"Projects"}</Span>
           </CustomNavLinkSmall>
         </NavLink>
-        <CustomNavLinkSmall onClick={() => scrollTo("product")}>
-          <Span>{"Thesis"}</Span>
-        </CustomNavLinkSmall>
+        <NavLink to="/experiences" style={{ textDecoration: "none" }}>
+          <CustomNavLinkSmall>
+            <Span>{"Experiences"}</Span>
+          </CustomNavLinkSmall>
+        </NavLink>
         <CustomNavLinkSmall
           style={{ width: "180px" }}
           onClick={() => scrollTo("contact")}

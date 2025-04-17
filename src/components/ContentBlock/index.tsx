@@ -1,8 +1,9 @@
-import { Row, Col } from "antd";
+import { Row, Col, Tooltip } from "antd";
 import { Fade } from "react-awesome-reveal";
 import { ContentBlockProps } from "./types";
 import { Button } from "../../common/Button";
-import { FirstTitle, LinkSite, LinkPortfolio } from './styles';
+import { FirstTitle, LinkSite, LinkPortfolio } from "./styles";
+import { useRef } from "react";
 
 import {
   ContentSection,
@@ -27,6 +28,22 @@ const ContentBlock = ({
   id,
   direction,
 }: ContentBlockProps) => {
+  const imageRef = useRef<HTMLImageElement>(null);
+
+  const handleFullscreen = () => {
+    if (imageRef.current) {
+      if (imageRef.current.requestFullscreen) {
+        imageRef.current.requestFullscreen();
+      } else if ((imageRef.current as any).webkitRequestFullscreen) {
+        // For Safari
+        (imageRef.current as any).webkitRequestFullscreen();
+      } else if ((imageRef.current as any).msRequestFullscreen) {
+        // For IE/Edge
+        (imageRef.current as any).msRequestFullscreen();
+      }
+    }
+  };
+
   return (
     <ContentSection>
       <Fade direction={direction} triggerOnce>
@@ -37,13 +54,27 @@ const ContentBlock = ({
           direction={direction}
         >
           <Col lg={11} md={11} sm={12} xs={24}>
-            <img src={icon} alt="Icon" style={{ width: '100%', height: 'auto', maxWidth: '450px', borderRadius: '5%' }} />
+            <Tooltip title="Click to view full screen">
+              <img
+                ref={imageRef}
+                src={icon}
+                alt="Icon"
+                onClick={handleFullscreen}
+                style={{
+                  width: "100%",
+                  height: "auto",
+                  maxWidth: "450px",
+                  borderRadius: "5%",
+                  cursor: "pointer",
+                }}
+              />
+            </Tooltip>
           </Col>
           <Col lg={11} md={11} sm={11} xs={24}>
             <ContentWrapper>
-              <FirstTitle>{(firsttitle)}</FirstTitle>
-              <h6>{(title)}</h6>
-              <Content>{(content)}</Content>
+              <FirstTitle>{firsttitle}</FirstTitle>
+              <h6>{title}</h6>
+              <Content>{content}</Content>
               {direction === "right" ? (
                 <ButtonWrapper>
                   {typeof button === "object" &&
@@ -59,14 +90,21 @@ const ContentBlock = ({
                           return (
                             <a
                               key={id}
-                              href="/CV/CV-Shayanne-Marasigan.pdf"
+                              href="/CV/MARASIGAN-SHAYYANNE_CV_updated.pdf"
                               target="_blank"
                               rel="noopener noreferrer"
                               download
-                              style={{ textDecoration: 'none', display: 'flex', flex: 1 }}
+                              style={{
+                                textDecoration: "none",
+                                display: "flex",
+                                flex: 1,
+                              }}
                             >
-                              <Button color={item.color} style={{ width: '100%' }}>
-                                {(item.title)}
+                              <Button
+                                color={item.color}
+                                style={{ width: "100%" }}
+                              >
+                                {item.title}
                               </Button>
                             </a>
                           );
@@ -74,14 +112,21 @@ const ContentBlock = ({
                         return (
                           <a
                             key={id}
-                            href="/CV/MARASIGAN-SHAYYANNE_CV_updated.pdf"
+                            href="https://github.com/staneunbl"
                             target="_blank"
                             rel="noopener noreferrer"
                             download
-                            style={{ textDecoration: 'none', display: 'flex', flex: 1 }}
+                            style={{
+                              textDecoration: "none",
+                              display: "flex",
+                              flex: 1,
+                            }}
                           >
-                            <Button color={item.color} style={{ width: '100%' }}>
-                              {(item.title)}
+                            <Button
+                              color={item.color}
+                              style={{ width: "100%" }}
+                            >
+                              {item.title}
                             </Button>
                           </a>
                         );
@@ -98,18 +143,23 @@ const ContentBlock = ({
                           target="_blank"
                           rel="noopener noreferrer"
                         >
-                          Visit her<span className="url"> Creative Portfolio on Canva.</span>
+                          Visit her
+                          <span className="url">
+                            {" "}
+                            Creative Portfolio on Canva.
+                          </span>
                         </LinkPortfolio>
                       </Col>
                     )}
-                    {(id === 'product') && (
+                    {id === "product" && (
                       <Col span={24}>
                         <LinkSite
                           href="https://barangayolympia.site/"
                           target="_blank"
                           rel="noopener noreferrer"
                         >
-                          View Site on <span className="url">Barangay Olympia Site.</span>
+                          View Site on{" "}
+                          <span className="url">Barangay Olympia Site.</span>
                         </LinkSite>
                       </Col>
                     )}
@@ -126,14 +176,18 @@ const ContentBlock = ({
                         ) => {
                           return (
                             <Col key={id} span={11}>
-                              <img
-                                src={item.icon}
-                                width="85px"
-                                height="auto"
-                                alt={item.title}
-                              />
-                              <MinTitle>{(item.title)}</MinTitle>
-                              <MinPara>{(item.content)}</MinPara>
+                              <Tooltip title="Click to view fullscreen">
+                                <img
+                                  ref={imageRef}
+                                  src={item.icon}
+                                  width="85px"
+                                  height="auto"
+                                  alt={item.title}
+                                  onClick={handleFullscreen}
+                                />
+                              </Tooltip>
+                              <MinTitle>{item.title}</MinTitle>
+                              <MinPara>{item.content}</MinPara>
                             </Col>
                           );
                         }
@@ -144,35 +198,45 @@ const ContentBlock = ({
             </ContentWrapper>
           </Col>
           <Col lg={24} md={24} sm={24} xs={24}>
-            {(id === 'mission') && (
+            {id === "mission" && (
               <>
-                <div style={{ marginTop: '3rem' }}>
+                <div style={{ marginTop: "3rem" }}>
                   <Row justify="space-between">
                     <Col lg={11} md={11} sm={12} xs={24}>
-                      <div style={{ marginBottom: '1rem' }}>
-                        <img
-                          src={icon2}
-                          alt="Icon 2"
-                          style={{
-                            width: '100%',
-                            height: 'auto',
-                            maxWidth: '450px',
-                            borderRadius: '5%'
-                          }}
-                        />
+                      <div style={{ marginBottom: "1rem" }}>
+                        <Tooltip title="Click to view fullscreen">
+                          <img
+                            ref={imageRef}
+                            src={icon2}
+                            alt="Icon 2"
+                            onClick={handleFullscreen}
+                            style={{
+                              width: "100%",
+                              height: "auto",
+                              maxWidth: "450px",
+                              borderRadius: "5%",
+                              cursor: "pointer",
+                            }}
+                          />
+                        </Tooltip>
                       </div>
                     </Col>
                     <Col lg={11} md={11} sm={12} xs={24}>
-                      <img
-                        src={icon3}
-                        alt="Icon 4"
-                        style={{
-                          width: '100%',
-                          height: 'auto',
-                          maxWidth: '450px',
-                          borderRadius: '5%'
-                        }}
-                      />
+                      <Tooltip title="Click to view fullscreen">
+                        <img
+                          ref={imageRef}
+                          src={icon3}
+                          alt="Icon 4"
+                          onClick={handleFullscreen}
+                          style={{
+                            width: "100%",
+                            height: "auto",
+                            maxWidth: "450px",
+                            borderRadius: "5%",
+                            cursor: "pointer",
+                          }}
+                        />
+                      </Tooltip>
                     </Col>
                   </Row>
                 </div>

@@ -22,6 +22,7 @@ const MiddleBlock = ({ title, content, secondtitle }: MiddleBlockProps) => {
               <StyledLine />
               <h6>{(title)}</h6>
               <Content>{(content)}</Content>
+              
               {/* Icon section */}
               <IconWrapper>
                 {/* First row */}
@@ -64,8 +65,17 @@ const MiddleBlock = ({ title, content, secondtitle }: MiddleBlockProps) => {
                   />
                 </IconItem>
               </IconWrapper>
+
               {/* Second row */}
               <IconWrapper style={{ marginBottom: "4rem" }}>
+                <IconItem>
+                  <img
+                    src="/img/svg/next-js.svg"
+                    alt="Next JS"
+                    width="65"
+                    height="65"
+                  />
+                </IconItem>
                 <IconItem>
                   <img
                     src="/img/svg/figma.svg"
@@ -89,7 +99,9 @@ const MiddleBlock = ({ title, content, secondtitle }: MiddleBlockProps) => {
                   <img src="/img/svg/shadcn-ui-seeklogo.svg" alt="ShadCN" width="65" height="65" />
                 </IconItem>
               </IconWrapper>
+
               <StyledLine />
+              
               <h6>{(secondtitle)}</h6>
               <IconWrapper>
                 <IconItem>
@@ -108,7 +120,8 @@ const MiddleBlock = ({ title, content, secondtitle }: MiddleBlockProps) => {
                   <img src="/img/svg/xampp-svgrepo-com.svg" alt="Postman" width="65" height="65" />
                 </IconItem>
               </IconWrapper>
-              <IconWrapper style={{ marginBottom: "0rem !important" }}>
+
+              <IconWrapper>
                 <IconItem>
                   <img src="/img/svg/figma.svg" alt="Figma" width="65" height="65" />
                 </IconItem>
@@ -124,10 +137,10 @@ const MiddleBlock = ({ title, content, secondtitle }: MiddleBlockProps) => {
                   />
                 </IconItem>
                 <IconItem>
-                  <img src="/img/svg/notion-seeklogo.svg" alt="Notion" width="80" height="80" />
+                  <img src="/img/svg/canva.svg" alt="Canva" width="65" height="65" />
                 </IconItem>
                 <IconItem>
-                  <img src="/img/svg/canva.svg" alt="Canva" width="65" height="65" />
+                  <img src="/img/svg/notion-seeklogo.svg" alt="Notion" width="80" height="80" />
                 </IconItem>
               </IconWrapper>
             </Col>
