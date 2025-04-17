@@ -27,7 +27,6 @@ const ContentBlock = ({
   id,
   direction,
 }: ContentBlockProps) => {
-
   return (
     <ContentSection>
       <Fade direction={direction} triggerOnce>
@@ -38,7 +37,7 @@ const ContentBlock = ({
           direction={direction}
         >
           <Col lg={11} md={11} sm={12} xs={24}>
-            <img src={icon} alt="Icon" style={{ width: '100%', height: 'auto', maxWidth: '450px', borderRadius: '5%'   }} />
+            <img src={icon} alt="Icon" style={{ width: '100%', height: 'auto', maxWidth: '450px', borderRadius: '5%' }} />
           </Col>
           <Col lg={11} md={11} sm={11} xs={24}>
             <ContentWrapper>
@@ -47,16 +46,31 @@ const ContentBlock = ({
               <Content>{(content)}</Content>
               {direction === "right" ? (
                 <ButtonWrapper>
-                {typeof button === "object" &&
-                  button.map(
-                    (
-                      item: {
-                        color?: string;
-                        title: string;
-                      },
-                      id: number
-                    ) => {
-                      if (item.title === "Download CV") {
+                  {typeof button === "object" &&
+                    button.map(
+                      (
+                        item: {
+                          color?: string;
+                          title: string;
+                        },
+                        id: number
+                      ) => {
+                        if (item.title === "Download CV") {
+                          return (
+                            <a
+                              key={id}
+                              href="/CV/CV-Shayanne-Marasigan.pdf"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              download
+                              style={{ textDecoration: 'none', display: 'flex', flex: 1 }}
+                            >
+                              <Button color={item.color} style={{ width: '100%' }}>
+                                {(item.title)}
+                              </Button>
+                            </a>
+                          );
+                        }
                         return (
                           <a
                             key={id}
@@ -72,78 +86,60 @@ const ContentBlock = ({
                           </a>
                         );
                       }
-                      return (
-                        <a
-                        key={id}
-                        href="https://github.com/staneunbl"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        download
-                        style={{ textDecoration: 'none', display: 'flex', flex: 1 }}
-                      >
-                        <Button color={item.color} style={{ width: '100%' }}>
-                          {(item.title)}
-                        </Button>
-                      </a>
-                      );
-                    }
-                  )}
-              </ButtonWrapper>
-
+                    )}
+                </ButtonWrapper>
               ) : (
-              <ServiceWrapper>
-                <Row justify="space-between">
-                  {typeof section === "object" && (
-                    <Col span={24}>
-                      <LinkPortfolio
-                        href="https://www.canva.com/design/DAGYmPzAyT8/t1TZ7cQRx1lxKnv_3KbSig/edit?utm_content=DAGYmPzAyT8&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        Visit her<span className="url"> Creative Portfolio on Canva.</span>
-                      </LinkPortfolio>
-                    </Col>
-                  )}
-
-                  {(id === 'product') && (
-                    <Col span={24}>
-                      <LinkSite
+                <ServiceWrapper>
+                  <Row justify="space-between">
+                    {typeof section === "object" && (
+                      <Col span={24}>
+                        <LinkPortfolio
+                          href="https://www.canva.com/design/DAGYmPzAyT8/t1TZ7cQRx1lxKnv_3KbSig/edit?utm_content=DAGYmPzAyT8&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Visit her<span className="url"> Creative Portfolio on Canva.</span>
+                        </LinkPortfolio>
+                      </Col>
+                    )}
+                    {(id === 'product') && (
+                      <Col span={24}>
+                        <LinkSite
                           href="https://barangayolympia.site/"
                           target="_blank"
                           rel="noopener noreferrer"
                         >
                           View Site on <span className="url">Barangay Olympia Site.</span>
-                      </LinkSite>
-                    </Col>
-                  )}
-
-                  {/* Render sections dynamically */}
-                  {typeof section === "object" &&
-                    section.map(  
-                      (
-                        item: {
-                          title: string;
-                          content: string;
-                          icon: string;
-                        },
-                        id: number
-                      ) => {
-                        return (
-                          <Col key={id} span={11}>
-                            <img
-                              src={item.icon}
-                              width="85px"
-                              height="auto"
-                              alt={item.title}
-                            />
-                            <MinTitle>{(item.title)}</MinTitle>
-                            <MinPara>{(item.content)}</MinPara>
-                          </Col>
-                        );
-                      }
+                        </LinkSite>
+                      </Col>
                     )}
-                </Row>
-              </ServiceWrapper>
+                    {/* Render sections dynamically */}
+                    {typeof section === "object" &&
+                      section.map(
+                        (
+                          item: {
+                            title: string;
+                            content: string;
+                            icon: string;
+                          },
+                          id: number
+                        ) => {
+                          return (
+                            <Col key={id} span={11}>
+                              <img
+                                src={item.icon}
+                                width="85px"
+                                height="auto"
+                                alt={item.title}
+                              />
+                              <MinTitle>{(item.title)}</MinTitle>
+                              <MinPara>{(item.content)}</MinPara>
+                            </Col>
+                          );
+                        }
+                      )}
+                  </Row>
+                </ServiceWrapper>
               )}
             </ContentWrapper>
           </Col>
@@ -153,29 +149,29 @@ const ContentBlock = ({
                 <div style={{ marginTop: '3rem' }}>
                   <Row justify="space-between">
                     <Col lg={11} md={11} sm={12} xs={24}>
-                    <div style={{ marginBottom: '1rem' }}>
-                        <img 
-                          src={icon2} 
-                          alt="Icon 2" 
-                          style={{ 
-                            width: '100%', 
-                            height: 'auto', 
-                            maxWidth: '450px', 
-                            borderRadius: '5%' 
-                          }} 
+                      <div style={{ marginBottom: '1rem' }}>
+                        <img
+                          src={icon2}
+                          alt="Icon 2"
+                          style={{
+                            width: '100%',
+                            height: 'auto',
+                            maxWidth: '450px',
+                            borderRadius: '5%'
+                          }}
                         />
                       </div>
                     </Col>
                     <Col lg={11} md={11} sm={12} xs={24}>
-                      <img 
-                        src={icon3} 
-                        alt="Icon 4" 
-                        style={{ 
-                          width: '100%', 
-                          height: 'auto', 
-                          maxWidth: '450px', 
-                          borderRadius: '5%' 
-                        }} 
+                      <img
+                        src={icon3}
+                        alt="Icon 4"
+                        style={{
+                          width: '100%',
+                          height: 'auto',
+                          maxWidth: '450px',
+                          borderRadius: '5%'
+                        }}
                       />
                     </Col>
                   </Row>
