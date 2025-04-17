@@ -11,13 +11,7 @@ interface MiddleBlockProps {
   button: string;
 }
 
-const MiddleBlock = ({ title, content, }: MiddleBlockProps) => {
-  const scrollTo = (id: string) => {
-    const element = document.getElementById(id) as HTMLDivElement;
-    element.scrollIntoView({
-      behavior: "smooth",
-    });
-  };
+const MiddleBlock = ({ title, content, secondtitle }: MiddleBlockProps) => {
 
   return (
     <MiddleBlockSection>
@@ -96,7 +90,7 @@ const MiddleBlock = ({ title, content, }: MiddleBlockProps) => {
                 </IconItem>
               </IconWrapper>
               <StyledLine />
-              <h6>{t(secondtitle)}</h6>
+              <h6>{(secondtitle)}</h6>
               <IconWrapper>
                 <IconItem>
                   <img src="/img/svg/vscode3-svgrepo-com.svg" alt="Visual Code" width="65" height="65" />
