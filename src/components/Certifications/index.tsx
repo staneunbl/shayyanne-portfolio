@@ -25,6 +25,7 @@ const Certification = ({ title, content, }: CertificationProps) => {
               <StyledLine />
               <h6>{(title)}</h6>
               <Content>{(content)}</Content>
+              
               <div
                 style={{
                   display: "flex",

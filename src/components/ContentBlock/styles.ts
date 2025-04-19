@@ -97,3 +97,17 @@ export const ButtonWrapper = styled("div")`
     max-width: 80%;
   }
 `;
+
+export const LinkCompanySite = styled("a")`
+  font-size: 18px;
+  display: block;
+  margin-top: 1rem;
+  margin-bottom: 0rem;
+  text-align: left;
+  text-decoration: none;  /* No underline by default */
+  
+  &:hover .url {
+    text-decoration: underline;
+    font-style: italic;
+  }
+`;

@@ -25,7 +25,7 @@ export const LinkCert = styled("a")`
   text-decoration: none;  /* No underline by default */
   
   &:hover .url {
-    text-decoration: underline; /* Underline only the URL when hovered */
+    text-decoration: underline;
     font-style: italic;
   }
 `;

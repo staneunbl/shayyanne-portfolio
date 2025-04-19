@@ -2,9 +2,7 @@ import { Row, Col, Tooltip } from "antd";
 import { Fade } from "react-awesome-reveal";
 import { ContentBlockProps } from "./types";
 import { Button } from "../../common/Button";
-import { FirstTitle, LinkSite, LinkPortfolio } from "./styles";
 import { useRef } from "react";
-
 import {
   ContentSection,
   Content,
@@ -14,6 +12,10 @@ import {
   MinPara,
   StyledRow,
   ButtonWrapper,
+  LinkCompanySite,
+  FirstTitle,
+  LinkSite,
+  LinkPortfolio,
 } from "./styles";
 
 const ContentBlock = ({
@@ -75,6 +77,17 @@ const ContentBlock = ({
               <FirstTitle>{firsttitle}</FirstTitle>
               <h6>{title}</h6>
               <Content>{content}</Content>
+              {id === "internship" && (
+                <>
+                  <LinkCompanySite
+                    href="https://linoflaptechnologyph.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Visit their <span className="url">company website.</span>
+                  </LinkCompanySite>
+                </>
+              )}
               {direction === "right" ? (
                 <ButtonWrapper>
                   {typeof button === "object" &&
