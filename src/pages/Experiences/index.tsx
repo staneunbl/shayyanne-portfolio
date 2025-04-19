@@ -1,6 +1,6 @@
 import React, { lazy } from "react";
 
-import MissionContent from "../../content/MissionContent.json";
+import IntenshipContent from "../../content/IntenshipContent.json";
 import Container from "../../common/Container";
 import ScrollToTop from "../../common/ScrollToTop";
 const ContentBlock = lazy(() => import("../../components/ContentBlock"));
@@ -11,16 +11,16 @@ const ProjectsPage = () => {
       <Container>
         <ScrollToTop />
         <ContentBlock
-          firsttitle={MissionContent.firsttitle}
+          firsttitle={IntenshipContent.firsttitle}
           direction="right"
-          title={MissionContent.title}
-          content={MissionContent.text}
-          icon="/img/images/cs3.png"
-          icon2="/img/images/cs2.png"
-          icon3="/img/images/cs4.png"
-          id="mission"
+          title={IntenshipContent.title}
+          content={IntenshipContent.text}
+          icon="/img/images/react_logo.png"
+          icon2="/img/images/intern_1.png"
+          icon3="/img/images/intern_2.png"
+          id="internship"
         />
-      </Container>
+      </Container>  
     </React.Fragment>
   );
 };

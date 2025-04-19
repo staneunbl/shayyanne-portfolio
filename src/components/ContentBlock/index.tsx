@@ -198,7 +198,7 @@ const ContentBlock = ({
             </ContentWrapper>
           </Col>
           <Col lg={24} md={24} sm={24} xs={24}>
-            {id === "mission" && (
+            {(id === "mission" || id === "internship") && (
               <>
                 <div style={{ marginTop: "3rem" }}>
                   <Row justify="space-between">

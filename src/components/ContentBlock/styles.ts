@@ -16,7 +16,7 @@ export const ContentSection = styled("section")`
 `;
 
 export const Content = styled("p")`
-  padding: 0.75rem 0 0.75rem;
+  padding: 0.10rem 0 0.75rem;
 `;
 
 export const StyledLine = styled.hr`
